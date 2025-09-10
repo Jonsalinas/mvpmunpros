@@ -300,7 +300,16 @@ a {
 
 @media(max-width: 400px){
   .grid{
-    grid-template-columns: auto;
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
+  }
+  .article{
+    width: 100%;
+    padding: 10px;
+  }
+  .side{
+    padding: 10px;
   }
   .box-features{
     grid-template-columns: auto;
