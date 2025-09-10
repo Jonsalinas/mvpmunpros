@@ -6,9 +6,8 @@
 body{
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
-html {
-  scroll-behavior: smooth;
-}
+
+/*html {  scroll-behavior: smooth;}*/
 .main{
     display: block;
     width: 100vw;
@@ -112,14 +111,16 @@ label{
     color:#fff;
     font-family: "Nunito", sans-serif;
     border-style: none;
-    background-color: #2BF265;
-    border-radius: 2px;
+    background-color: #20DE57;
+    border-radius: 4px;
     cursor:pointer;
     font-weight: bold;
     font-size: 1.1em;
     
 }
-
+.btn-send:hover{
+    background-color:#0AD244 ;
+}
 .border{
     border:0px solid #ddd
 }
@@ -192,8 +193,9 @@ label{
     width: 100%;
     height: auto;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-family:"Nunito", sans-serif;
+    
 }
 
 .title-item{
@@ -205,15 +207,17 @@ label{
 .icon-items{
     width: 50px;
     height: 50px;
-    border:1px solid #aaa;
     border-radius: 4px;
     margin-bottom: 20px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .box-descriptions{
     position: relative;
     display: grid;
-    grid-template-columns:1fr 0.7fr ;
+    grid-template-columns:1fr 1fr;
     height: 400px;
     max-width: 1280px;
     margin: auto;
@@ -231,10 +235,14 @@ label{
     font-size: 0.9rem;
 }
 .image-descriptions{
-    display: flex;
-    width: 100%;
+    display: block;
+    position: absolute;
+    min-width: 100%;
     height: 100%;
-    border:1px solid red
+    background-image: url(./img/roket.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .footer{
     display: flex;
@@ -242,7 +250,7 @@ label{
     align-items: center;
     width: 100%;
     height: 100px;
-    background-color: #4D527B;
+    background-color: #4F5258;
 }
 
 .content-footer{
@@ -262,16 +270,34 @@ label{
     color:#fff;
     font-family: "Nunito", sans-serif;
     border-style: none;
-    border: 0px solid #000;
-    background-color: #12C71D;
+    background-color: #20DE57;
     border-radius: 4px;
     cursor:pointer;
     font-weight: bold;
     font-size: 1.1em;
     
 }
-
+.btn-footer:hover{
+    background-color:#12C71D ;
+}
 a {
   text-decoration: none; /* quita el subrayado */
   color: inherit;        /* hereda el color del texto padre */
+}
+
+
+
+
+.icon-client{
+    background-image: url(./img/client.png);
+}
+.icon-profile{
+    background-image: url(./img/profile.png);
+}
+.icon-public{
+    background-image: url(./img/public.png);
+}
+
+.zindex{
+    z-index: 2;
 }
