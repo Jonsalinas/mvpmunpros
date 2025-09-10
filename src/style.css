@@ -35,11 +35,7 @@ body{
 }
 
 
-@media(max-width: 400px){
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 .logo{
     font-family: "Quicksand", sans-serif;
@@ -300,4 +296,55 @@ a {
 
 .zindex{
     z-index: 2;
+}
+
+@media(max-width: 400px){
+  .grid{
+    grid-template-columns: auto;
+  }
+  .box-features{
+    grid-template-columns: auto;
+  }
+  .block, .p80{
+    grid-template-columns: auto;
+    align-items: center; 
+    padding: 20px;
+  }
+  .box-descriptions{
+    grid-template-columns: auto;
+    height: auto;
+  }
+  .description{
+    font-size: 0.8em;
+  }
+  .des-item{
+    font-size: 0.8em;
+  }
+  .title-block{
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .description-features{
+    text-align: center;
+    font-size: 0.9em;
+  }
+  .content-footer{
+    padding: 10px 0px;
+    height: auto;
+    font-size: 12px;
+    flex-direction: column;
+  }
+  .content-footer > p{
+    margin-bottom: 10px;
+  }
+
+  .footer{
+    height: auto;
+  }
+  .image-descriptions{
+   
+    background-image: url(./img/roket_min.png);
+    background-size: cover;
+  }
+
 }
