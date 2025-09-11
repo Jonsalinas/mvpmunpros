@@ -42,7 +42,7 @@ body{
     margin-bottom: 20px;
     font-size: 40px;
 }
-
+.sublogo_mini, .logo_mini{display:none}
 .box{
     position: relative;
     display: block;
@@ -58,6 +58,9 @@ body{
     font-weight: bold;
     color:#666;
     font-size: 1.2rem;
+}
+.q_m{
+    display:none
 }
 .description{
     font-family: arial;
@@ -302,7 +305,7 @@ a {
   .grid{
     flex-direction: column;
     display: flex;
-    padding: 10px;
+    padding: 0px;
   }
   .article{
     width: 100%;
@@ -310,6 +313,7 @@ a {
   }
   .side{
     padding: 10px;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   }
   .box-features{
     grid-template-columns: auto;
@@ -355,5 +359,23 @@ a {
     background-image: url(./img/roket_min.png);
     background-size: cover;
   }
-
+.logo{
+    display: none;margin-bottom: 0px;
+    
+}
+.logo_mini{font-size: 2.3rem;font-family: "Quicksand", sans-serif;}
+.sublogo_mini{font-size: 1.2rem;font-family: "Quicksand", sans-serif;color:#777}
+.sublogo_mini, .logo_mini{display:block}
+.q{display: none;}
+.box{
+    margin-bottom: 0;
+}
+.q_m{
+    display: block;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    color:#666;
+    font-size: 1.2rem;
+}
+.description{text-align: justify;}
 }
