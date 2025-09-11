@@ -7,7 +7,7 @@ body{
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
-/*html {  scroll-behavior: smooth;}*/
+html {  scroll-behavior: smooth;}
 .main{
     display: block;
     width: 100vw;
