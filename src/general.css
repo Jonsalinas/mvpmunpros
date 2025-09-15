@@ -1,0 +1,43 @@
+.display-flex{
+    display: flex;
+}
+
+.dir-col{
+    flex-direction: column;
+}
+.grid-col3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.grid-col2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.justify-center{
+    justify-content: center;
+}
+.justify-start{
+    justify-content: flex-start;
+}
+.justify-end{
+    justify-content: flex-end;
+   
+}
+
+.a-i-c{
+    align-items: center;
+}
+
+.p5{
+  padding: 5px;  
+}
+.p10{
+  padding: 10px;  
+}
+.p15{
+  padding: 15px;  
+}
+.p20{
+  padding: 20px;  
+}
