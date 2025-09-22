@@ -33,8 +33,13 @@ h1 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
+}
+.section{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
 
-   
 }
 
 .container{
@@ -106,6 +111,41 @@ h1 {
     margin-right: 5px;
     
 }
+
+
+
+.img-network{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
