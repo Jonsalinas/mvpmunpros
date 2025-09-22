@@ -29,7 +29,7 @@ h1 {
     rgba(255,255,255,0.9) 0%,   /* centro más opaco */
     rgba(255,255,255,0.8) 40%,  /* se va aclarando */
     rgba(255,255,255,0) 100%    /* bordes casi sin opacidad */
-  ),url("../src/img/polygon-scatter-haikei.svg");
+  ),url("../img/polygon-scatter-haikei.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
@@ -118,9 +118,14 @@ h1 {
  }
 
 @media screen and (max-width: 900px){
-
+    .lemma{
+        font-size: 2em;
+    }
+    .logo{
+        font-size: 2em;
+    }
     html {
-        font-size: 16px; /* 1rem = 16px */
+        font-size: 14px; /* 1rem = 16px */
     }
     .section-hero{
         display: block;
