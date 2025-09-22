@@ -29,7 +29,7 @@ h1 {
     rgba(255,255,255,0.9) 0%,   /* centro más opaco */
     rgba(255,255,255,0.8) 40%,  /* se va aclarando */
     rgba(255,255,255,0) 100%    /* bordes casi sin opacidad */
-  ),url("../img/polygon-scatter-haikei.svg");
+  ),url("../src/img/polygon-scatter-haikei.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
