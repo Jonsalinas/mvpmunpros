@@ -39,9 +39,9 @@ h1 {
 
 .container{
     display: flex;
-    min-width: 1024px;
-    max-width: 1024px;
-    border:0px solid #000
+    min-width: 1280px;
+    max-width: 1280px;
+    border:0px solid #000;
 }
 
 .content{
@@ -165,7 +165,9 @@ h1 {
 
 
 
-
+.bg-hero{
+    background-color: rgba(233, 235, 242,0.3);
+}
 
 
 
