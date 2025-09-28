@@ -184,8 +184,8 @@ h1 {
             circle at center, 
             rgba(255,255,255,0.9) 0%,   /* centro más opaco */
             rgba(255,255,255,0.8) 60%,  /* se va aclarando */
-            rgba(255,255,255,0.5) 100%    /* bordes casi sin opacidad */
-        ),url("../src/img/polygon-scatter-haikei.svg");
+            rgba(255,255,255,0.5) 0%    /* bordes casi sin opacidad */
+        ),url("../src/img/bannerx.png");
     }
     .container, .column{
         display: block;
