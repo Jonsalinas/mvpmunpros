@@ -11,79 +11,97 @@ p  { font-size: 1rem; }   /* 16px */
 h1 {
   font-size: clamp(2rem, 5vw, 3rem); /* mínimo 32px, máximo 48px, escala según pantalla */
 }
+
+
 .main{
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.section-hero{
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    min-height: 100vh;
-    max-height: 100vh;
-    border:0px solid red;
-    background-image:radial-gradient(
-    circle at center, 
-    rgba(255,255,255,0.9) 0%,   /* centro más opaco */
-    rgba(255,255,255,0.8) 40%,  /* se va aclarando */
-    rgba(255,255,255,0) 100%    /* bordes casi sin opacidad */
-  ),url("../src/img/bannerx.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; 
-}
 .section{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: auto;
+  display: block;
+  margin: auto;
+  border:0px solid red;
+  height: auto;
+}
+.section-hero{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 5%;
+  background-color: transparent;
 
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.container{
-    display: flex;
-    min-width: 1280px;
-    max-width: 1280px;
-    border:0px solid #000;
+.content-hero{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border:0px solid #000;
+  padding: 5px;
 }
 
-.content{
-    border:0px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-image{
+  position: relative;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
-
-
+.image-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+.img-hero{
+  max-width: 100%;
+}
+.box{
+  display: block;
+  border:0px solid #000;
+  padding: 0;
+  margin-bottom: 12px;
+}
+.controls-hero{
+  display: inl;
+  flex-direction: row;
+  padding: 0;
+  margin-bottom: 12px;
+}
 
 .logo{
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: "Quicksand", sans-serif;
-    font-weight: bold;
-    color:#1B51D0
+    font-weight: 700;
+    color:#1B51D0;
+
+
 }
 .lemma{
-    font-size: 4em;
-    font-family: "Exo", sans-serif;
-    font-weight: bold;
-    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3rem;
+    font-weight: normal  ;
+    
 }
 .text{
     font-size: 1.2em;
     font-family: "Quicksand", sans-serif;
-    font-weight: 600;
-    color:#777;
-    text-align: center;
+    color:#444;
 
- }
+}
 
 
 
-    .btn-go{
+.btn-go{
     color:#fff;
     font-family: "Nunito", sans-serif;
     border-style: none;
@@ -93,12 +111,12 @@ h1 {
     font-weight: bold;
     font-size: 1.1em;
     margin-right: 5px;
-    padding: 10px;
+     padding: 10px;
     
 }
 
 .btn-more{
-    padding: 10px;
+
     color:#000;
     font-family: "Nunito", sans-serif;
     border-style: none;
@@ -109,165 +127,42 @@ h1 {
     font-weight: bold;
     font-size: 1.1em;
     margin-right: 5px;
+    padding: 10px;
     
 }
 
 
 
-.img-network{
-    max-width: 100px;
-    max-height: 100px;
-}
-
-
-.banner{
-    background-image: url("../src/img/banner.png");
+.bg{
+  background-image:url("./img/polygon-scatter-haikei-big.svg") ;
+  background-repeat: no-repeat;
 }
 
 
 
 
+@media (max-width: 968px) {
+            .section-hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 3rem 5%;
+            }
+
+            .content-hero h1 {
+                font-size: 2.5rem;
+            }
+
+ 
+        }
+
+        @media (max-width: 640px) {
+            .content-hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-hero p {
+                font-size: 1rem;
+            }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- @media screen and (min-width: 1024px) and (max-width: 1599px){
-    
- }
-
-@media screen and (max-width: 900px){
-    .lemma{
-        font-size: 2em;
-    }
-    .logo{
-        font-size: 2em;
-    }
-    html {
-        font-size: 14px; /* 1rem = 16px */
-    }
-    .section-hero{
-        display: block;
-        position: relative;
-        max-width: 100%;
-        height: auto;
-        min-height: 100%;
-        max-height: 100%;
-        padding: 20px 0px;
-        background-size: cover; 
-        background-position: left;
-        background-image:radial-gradient(
-            circle at center, 
-            rgba(255,255,255,0.9) 0%,   /* centro más opaco */
-            rgba(255,255,255,0.8) 60%,  /* se va aclarando */
-            rgba(255,255,255,0.5) 0%    /* bordes casi sin opacidad */
-        ),url("../src/img/bannerx.png");
-    }
-    .container, .column{
-        display: block;
-        position: relative;
-        min-width: 100%;
-    max-width: 100%;
-    }
-    .display-flex{
-        display: block;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-.bg-hero{
-    background-color: rgba(233, 235, 242,0.3);
-}
-
-
-
-.display-flex{
-    display: flex;
-}
-
-.dir-col{
-    flex-direction: column;
-}
-.grid-col3{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-
-.justify-center{
-    justify-content: center;
-}
-.justify-start{
-    justify-content: flex-start;
-}
-.justify-end{
-    justify-content: flex-end;
-   
-}
-
-.align-center{
-    align-items: center;
-}
-
-.p5{
-  padding: 5px;  
-}
-.p10{
-  padding: 10px;  
-}
-.p15{
-  padding: 15px;  
-}
-.p20{
-  padding: 20px;  
-}
-.p40{
-  padding: 40px;  
-}
-.plr20{
-  padding:0px 20px;  
-}
-.plr40{
-  padding:0px 40px;  
-}
-
-
-.pt20{
-    padding-top:20px;
-}
-.pt10{
-    padding-top:10px;
-}
+        }
