@@ -33,7 +33,19 @@ h1 {
   gap: 4rem;
   padding: 2rem 5%;
   background-color: transparent;
-
+border:0px solid red;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.section-context{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 5%;
+  background-color: transparent;
+border:0px solid red;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -52,6 +64,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border:0px solid #000;
 }
 .image-placeholder {
             width: 100%;
@@ -81,8 +94,8 @@ h1 {
 .logo{
     font-size: 2.5rem;
     font-family: "Quicksand", sans-serif;
-    font-weight: 700;
-    color:#1B51D0;
+    font-weight: bold;
+    color:#1075B0;
 
 
 }
@@ -98,6 +111,53 @@ h1 {
     color:#444;
 
 }
+
+
+.subtitle-section{
+  text-align: center;
+  font-family:"Quicksand", sans-serif;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+.context-section{
+  text-align: center;
+  font-family:"Quicksand", sans-serif;
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -166,3 +226,49 @@ h1 {
 
 
         }
+
+
+
+
+
+
+        
+.p5{
+  padding: 5px;  
+}
+.p10{
+  padding: 10px;  
+}
+.p15{
+  padding: 15px;  
+}
+.p20{
+  padding: 20px;  
+}
+.p40{
+  padding: 40px;  
+}
+.plr20{
+  padding-left: 20px;  
+  padding-right: 20px;
+}
+.plr40{
+  padding-left: 40px;  
+  padding-right: 40px; 
+}
+
+.pt20{
+  padding-top: 20px;
+}
+
+.pt40{
+  padding-top: 40px;
+}
+
+.pb20{
+  padding-bottom: 20px;
+}
+
+.pb40{
+  padding-bottom: 40px;
+}
