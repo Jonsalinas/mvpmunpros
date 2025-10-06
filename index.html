@@ -17,10 +17,10 @@
         <section class="section bg-hero">
             <section class="section-hero">
                 <div class="content-hero">
-                    <div class="box"><h1 class="logo">munpros</h1></div>
-                    <div class="box"><h2 class="lemma">SUS PRODUCTOS, SERVICIOS, MARCAS Y TIENDAS AL ALCANCE DE TODOS</h2></div>
-                    <div class="box"><p class="text"><b>En Honduras</b>, la nueva plataforma digital que necesita su negocio para aumentar sus ventas e incrementar posibles <b>nuevos clientes.</b></p></div>
-                    <div class="box"><p class="text">munpros es una plataforma para <b>publicar productos y servicios</b> de negocios y empresas, pequeñas, medianas, grandes o comerciantes individuales <b>para el publico en general.</b></p></div>
+                    <div class="box mb10"><h1 class="logo">munpros</h1></div>
+                    <div class="box mb10"><h2 class="lemma">SUS PRODUCTOS, SERVICIOS, MARCAS Y TIENDAS AL ALCANCE DE TODOS</h2></div>
+                    <div class="box mb10"><p class="text"><b>En Honduras</b>, la nueva plataforma digital que necesita su negocio para aumentar sus ventas e incrementar posibles <b>nuevos clientes.</b></p></div>
+                    <div class="box mb20"><p class="text">munpros es una plataforma para <b>publicar productos y servicios</b> de negocios y empresas, pequeñas, medianas, grandes o comerciantes individuales <b>para el publico en general.</b></p></div>
 
                     <div class="controls-hero">
                             <button class="btn-go plr20">Hacer Pre-registro</button>
@@ -35,20 +35,112 @@
             </section>
         </section>
         <section class="">
-            <div class="box pt40 pb40 plr20 bg-section-context">
-                <h2 class="subtitle-section">Descubra las posibilidades</h2>
+            <div class="box  pt40 pb40 plr20 bg-section-context">
+                <h2 class="subtitle-section mb20">Descubra las posibilidades</h2>
                 <p class="context-section">Sea de los primeros en tener un perfil de su negocio en munpros, y aproveche los veneficios que munpros podra tener a nivel nacional.</p>
             </div>
-            <div class="section-context">
-                
-            </div>
+   
 
         </section>
+        <section class="pt40 pb40 bg-grey">
+            <div class="section-features ">
+                <div class="content-feature-text">
+                    <div class="box mb20">
+                        <h2 class="subtitle-content">Quien lo usa</h2>
+                    </div>
+                    <div class="box">
+                        <p class="text-feature mb20">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi reprehenderit nemo sit alias harum quas maiores, corrupti, modi cupiditate culpa consectetur sapiente cum praesentium non sunt nobis soluta accusamus sint?
+                        </p>
+                        <p class="text-feature">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi reprehenderit nemo sit alias harum quas maiores, corrupti, modi cupiditate culpa consectetur sapiente cum praesentium non sunt nobis soluta accusamus sint?
+                        </p>
+                    </div>
+                </div>
+                <div class="content-feature-figures">
+                    <div class="box-feature-img mb20">
+                        <div class="icon-feature face-person"></div>
+                        <div class="box-describe-icon-feature">
+                            <h4 class="title-icon-feature color-p">Personas</h4>  
+                            <p class="describe-icon-feature">
+                                Algo de texto para describir el icono del feature, un poco mas que describa correctamente
+                            </p> 
+                            
+                        </div>
+                    </div>
+                    <div class="box-feature-img">
+                        <div class="icon-feature store"></div>
+                        <div class="box-describe-icon-feature">
+                            <h4 class="title-icon-feature color-b">Negocios</h4>
+                            <p class="describe-icon-feature">Algo de texto para describir el icono del feature, un poco mas que describa correctamente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-masonry ">
+        <div class="gallery-section">
+  <h2 class="gallery-title">Nuestra Galería</h2>
+  <button id="reloadGallery">Recargar Galería</button>
+
+  <div class="gallery"></div>
+</div>
+                <div class="box">
+                    algo de texto
+                </div>
+            </div>
+        </section>
+            
+         
+
         
         
     </main>
 
    
     <footer></footer>
+<script>
+  const gallery = document.querySelector('.gallery');
+  const reloadBtn = document.getElementById('reloadGallery');
+
+  function createBlock() {
+    const block = document.createElement('div');
+    block.classList.add('block');
+
+    const randomHeight = Math.floor(Math.random() * 250) + 200; // 200–450 px
+    const color1 = `hsl(${Math.random() * 360}, 70%, 60%)`;
+    const color2 = `hsl(${Math.random() * 360}, 70%, 70%)`;
+
+    block.style.height = `${randomHeight}px`;
+    block.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
+
+    return block;
+  }
+
+  function loadGallery() {
+    // 🔸 Añadimos un efecto de desvanecimiento al limpiar
+    gallery.style.opacity = '0';
+    setTimeout(() => {
+      gallery.innerHTML = '';
+      const totalBlocks = 12;
+
+      for (let i = 0; i < totalBlocks; i++) {
+        const block = createBlock();
+        gallery.appendChild(block);
+
+        // efecto de aparición escalonado
+        setTimeout(() => block.classList.add('show'), i * 100);
+      }
+
+      gallery.style.opacity = '1';
+    }, 300);
+  }
+
+  loadGallery();
+  reloadBtn.addEventListener('click', loadGallery);
+</script>
+
+
 </body>
 </html>
