@@ -1,7 +1,18 @@
 .bg-hero{
     background-color: #fff;
 }
+.bg-grey{
+    background-color: #f5f5f5;
+}
 
 .bg-section-context{
-    background-color: #ddd;
+    background-color: #1075B0;
+}
+
+.color-p{
+    color: #1075B0;
+}
+
+.color-b{
+    color: #641CBA;
 }
