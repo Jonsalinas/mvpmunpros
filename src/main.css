@@ -293,14 +293,14 @@ border:0px solid red;
 .section-base{
   display: grid;
   grid-template-columns:1fr;
-  height: 500px;
+  height: auto;
   align-items: center;
   gap: 2rem;
   padding: 0;
   background-color: transparent;
 border:0px solid red;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
 .section-base > .section-base-left, .section-base-right{
@@ -314,19 +314,60 @@ border:0px solid red;
   border-radius: 20px
 }
 .img-base{
-  max-width: 1024px;
+  max-width: 900px;
   margin: auto;
   border-radius: 20px;
-border:2px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
+border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
   
 
+}
+
+.section-base-main{
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 
 
 
+.galeria {
+  display: flex;
+  gap: 20px;
+}
 
+.sofa {
+  position: relative;
 
+  background-image: url('./img/sala.jpg'); /* tu imagen */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Efecto general para realzar colores */
+.sofa::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: color;
+  opacity: 0.4;
+}
+
+/* Versión roja */
+.sofa.rojo::after {
+  background-color: rgb(255, 80, 80);
+}
+
+/* Versión verde */
+.sofa.verde::after {
+  background-color: rgb(80, 255, 140);
+}
+
+/* Versión gris */
+.sofa.gris::after {
+  background-color: rgb(160, 160, 160);
+}
 
 
 
@@ -374,7 +415,10 @@ border:2px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
   background-image:url("./img/polygon-scatter-haikei-big.svg") ;
   background-repeat: no-repeat;
 }
-
+.bg-base{
+  background-image:url("./img/base.svg") ;
+  background-repeat: no-repeat;
+}
 
             .section-type{
               padding: 40px 0px ;
@@ -398,6 +442,9 @@ border:2px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
             .section-type{
               padding: 0 ;
             }
+            .img-base{
+              max-width: 90%;
+            }
             
         }
 
@@ -415,6 +462,13 @@ border:2px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
             .content-row-icon-gallery{
               justify-content: center;
             }
+            .img-base{
+              max-width: 90%;
+            }
+            .section-base-main{
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
 
         }
 
@@ -490,7 +544,7 @@ border:2px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
 
 .gallery-section {
   padding: 40px 20px;
-  border: 2px solid #311DB5;
+  border: 0px solid #311DB5;
   border-radius: 20px;
 }
 
