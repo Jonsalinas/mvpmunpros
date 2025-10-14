@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente Whisper Avanzado</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #555;
+    }
+    select, input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    select:focus, input[type="file"]:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+    button {
+      width: 100%;
+      padding: 12px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    #resultado {
+      margin-top: 20px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      max-height: 400px;
+      overflow-y: auto;
+      display: none;
+    }
+    #resultado.show {
+      display: block;
+    }
+    .info {
+      background: #e7f3ff;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #0066cc;
+    }
+    .loading {
+      text-align: center;
+      color: #666;
+    }
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #007bff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎤 Transcripción de Audio con Whisper</h1>
+    
+    <div class="info">
+      💡 <strong>Tip:</strong> El modelo "tiny" es el más rápido, "base" es equilibrado, y "small/medium/large" son más precisos pero más lentos.
+    </div>
+
+    <div class="form-group">
+      <label for="audioFile">📁 Selecciona un archivo de audio:</label>
+      <input type="file" id="audioFile" accept="audio/*,video/*">
+    </div>
+
+    <div class="form-group">
+      <label for="modelo">🤖 Modelo de Whisper:</label>
+      <select id="modelo">
+        <option value="tiny">Tiny (Más rápido ⚡⚡⚡⚡⚡)</option>
+        <option value="base" selected>Base (Equilibrado ⚡⚡⚡⚡)</option>
+        <option value="small">Small (Más preciso ⚡⚡⚡)</option>
+        <option value="medium">Medium (Muy preciso ⚡⚡)</option>
+        <option value="large">Large (Máxima precisión ⚡)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="language">🌍 Idioma:</label>
+      <select id="language">
+        <option value="">Auto-detectar</option>
+        <option value="es" selected>Español</option>
+        <option value="en">Inglés</option>
+        <option value="fr">Francés</option>
+        <option value="de">Alemán</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Portugués</option>
+        <option value="zh">Chino</option>
+        <option value="ja">Japonés</option>
+        <option value="ko">Coreano</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="formato">📄 Formato de salida:</label>
+      <select id="formato">
+        <option value="json">JSON (Ver en pantalla)</option>
+        <option value="txt">TXT (Descargar)</option>
+        <option value="docx">Word/DOCX (Descargar)</option>
+        <option value="pdf">PDF (Descargar)</option>
+      </select>
+    </div>
+
+    <button id="btnEnviar">Transcribir Audio</button>
+    
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    const API_URL = "https://jonsen25-audio-texto.hf.space/transcribe";
+
+    document.getElementById('btnEnviar').addEventListener('click', async () => {
+      const fileInput = document.getElementById('audioFile');
+      const modeloSelect = document.getElementById('modelo');
+      const languageSelect = document.getElementById('language');
+      const formatoSelect = document.getElementById('formato');
+      const btnEnviar = document.getElementById('btnEnviar');
+      const resultado = document.getElementById('resultado');
+
+      const file = fileInput.files[0];
+      const modelo = modeloSelect.value;
+      const language = languageSelect.value;
+      const formato = formatoSelect.value;
+
+      if (!file) {
+        alert('Por favor, selecciona un archivo de audio primero.');
+        return;
+      }
+
+      // Deshabilitar botón
+      btnEnviar.disabled = true;
+      btnEnviar.textContent = "Procesando...";
+      
+      resultado.classList.add('show');
+      resultado.innerHTML = `
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>⏳ Transcribiendo con modelo <strong>${modelo}</strong>...</p>
+          <p style="font-size: 12px;">Esto puede tomar desde unos segundos hasta algunos minutos dependiendo del modelo y tamaño del archivo.</p>
+        </div>
+      `;
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("modelo", modelo);
+      formData.append("formato", formato);
+      if (language) {
+        formData.append("language", language);
+      }
+      
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
+
+        // Si es JSON, mostrar en pantalla
+        if (formato === "json") {
+          const result = await response.json();
+          console.log(result);
+
+          if (result.success) {
+            resultado.innerHTML = `
+              <strong>✅ Transcripción completada</strong><br><br>
+              <strong>Modelo usado:</strong> ${result.modelo}<br>
+              <strong>Idioma detectado:</strong> ${result.language}<br><br>
+              <strong>Texto:</strong><br>
+              <div style="background: white; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                ${result.text}
+              </div>
+            `;
+          } else {
+            resultado.innerHTML = `❌ Error: ${result.error}`;
+          }
+        } else {
+          // Si es archivo descargable (txt, docx, pdf)
+          const blob = await response.blob();
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          
+          // Determinar nombre de archivo
+          const extension = formato === "docx" ? "docx" : formato === "pdf" ? "pdf" : "txt";
+          a.download = `transcripcion_${Date.now()}.${extension}`;
+          
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);
+          
+          resultado.innerHTML = `✅ <strong>Archivo descargado exitosamente!</strong><br><br>Revisa tu carpeta de descargas.`;
+        }
+      } catch (error) {
+        console.error(error);
+        resultado.innerHTML = `❌ <strong>Error de conexión:</strong> ${error.message}`;
+      } finally {
+        // Rehabilitar botón
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = "Transcribir Audio";
+      }
+    });
+  </script>
+</body>
+</html>
