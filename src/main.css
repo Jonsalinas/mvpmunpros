@@ -191,7 +191,19 @@ border:0px solid red;
   border:0px solid red;
   
 }
+.service-icon{
+  background-image:url("./img/service.svg") ;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+}
 
+.product-icon{
+  background-image:url("./img/product.svg") ;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
 
 .face-person{
   background-image:url("./img/face-person.svg") ;
