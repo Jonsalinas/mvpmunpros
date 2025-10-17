@@ -408,11 +408,16 @@
         let archivoSeleccionado = null;
         const API_URL = 'http://localhost:8000'; // Cambiar por tu URL
 
-        // Drag & Drop
-        uploadSection.addEventListener('click', () => audioFile.click());
+        // Click para abrir selector de archivos
+        uploadSection.addEventListener('click', (e) => {
+            e.stopPropagation();
+            audioFile.click();
+        });
         
+        // Drag & Drop
         uploadSection.addEventListener('dragover', (e) => {
             e.preventDefault();
+            e.stopPropagation();
             uploadSection.classList.add('dragging');
         });
 
@@ -473,4 +478,130 @@
                 });
 
                 const reader = response.body.getReader();
-                const decoder = new Text
+                const decoder = new TextDecoder();
+                let buffer = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+
+                    buffer += decoder.decode(value, { stream: true });
+                    const lines = buffer.split('\n\n');
+                    buffer = lines.pop();
+
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            const data = JSON.parse(line.slice(6));
+                            manejarEvento(data);
+                        }
+                    }
+                }
+
+            } catch (error) {
+                alert('Error al transcribir: ' + error.message);
+                console.error(error);
+            } finally {
+                btnTranscribe.disabled = false;
+                btnTranscribe.textContent = '🚀 Comenzar Transcripción';
+            }
+        }
+
+        function manejarEvento(data) {
+            const { step, message, text, text_improved, language } = data;
+
+            // Actualizar pasos visuales
+            switch(step) {
+                case 'upload':
+                    activarPaso('stepUpload', message);
+                    break;
+                
+                case 'loading':
+                    completarPaso('stepUpload');
+                    activarPaso('stepLoading', message);
+                    break;
+                
+                case 'transcribing':
+                    completarPaso('stepLoading');
+                    activarPaso('stepTranscribing', message);
+                    break;
+                
+                case 'transcribed':
+                    completarPaso('stepTranscribing');
+                    document.getElementById('textOriginal').textContent = text;
+                    break;
+                
+                case 'improving':
+                    activarPaso('stepImproving', message);
+                    break;
+                
+                case 'completed':
+                    completarPaso('stepImproving');
+                    activarPaso('stepCompleted', message);
+                    completarPaso('stepCompleted');
+                    
+                    if (text_improved) {
+                        document.getElementById('textImproved').textContent = text_improved;
+                    } else {
+                        document.getElementById('textImproved').textContent = 'No se aplicó mejora con IA';
+                    }
+                    
+                    resultsSection.classList.add('active');
+                    break;
+                
+                case 'error':
+                    alert('Error: ' + message);
+                    break;
+            }
+        }
+
+        function activarPaso(stepId, message) {
+            const step = document.getElementById(stepId);
+            step.classList.add('active');
+            step.querySelector('.step-message').textContent = message;
+        }
+
+        function completarPaso(stepId) {
+            const step = document.getElementById(stepId);
+            step.classList.remove('active');
+            step.classList.add('completed');
+        }
+
+        async function descargarTexto(formato) {
+            if (!archivoSeleccionado) return;
+
+            const formData = new FormData();
+            formData.append('file', archivoSeleccionado);
+            formData.append('language', document.getElementById('idioma').value);
+            formData.append('modelo', document.getElementById('modelo').value);
+            formData.append('formato', formato);
+            formData.append('mejorar', document.getElementById('mejorar').value);
+
+            try {
+                const response = await fetch(`${API_URL}/transcribe`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (formato === 'json') {
+                    const data = await response.json();
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                    descargarBlob(blob, 'transcripcion.json');
+                } else {
+                    const blob = await response.blob();
+                    descargarBlob(blob, `transcripcion.${formato}`);
+                }
+            } catch (error) {
+                alert('Error al descargar: ' + error.message);
+            }
+        }
+
+        function descargarBlob(blob, filename) {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
