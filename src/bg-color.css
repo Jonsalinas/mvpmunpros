@@ -1,15 +1,67 @@
-.bg-hero{
+/*.bg-hero{
     background-color: #fff;
 }
 .bg-grey{
     background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    /*background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);*/
 }
 
 .bg-section-context{
     background-color: #1075B0;
 }
 
+.color-p{
+    color: #1075B0;
+}
+
+.color-b{
+    color: #641CBA;
+}
+
+.bg-spetial{
+   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.color-black{
+    color:#000;
+}
+
+.color-que{
+    
+    color: #EF7722;
+    font-size: 1.5em;
+    font-family: "Caveat";
+}
+.color-quien{
+    color: #9112BC;
+    font-size: 1.5em;
+    font-family: "Caveat";
+}
+
+.color-pro{
+    color: #B65510;
+}
+
+.color-ser{
+    color: #BC9F17;
+}*/
+.bg-hero{
+    background-color: #fff;
+}
+.bg-grey{
+    /*background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);*/
+    background-image: linear-gradient(135deg, #fdfcfb 20%, #C3D8E2 100%);
+}
+
+.bg-section-context{
+    background-color: #1075B0;
+}
+.bg-first-section{
+
+      background-image:url("./img/bg-first-section.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
 .color-p{
     color: #1075B0;
 }
