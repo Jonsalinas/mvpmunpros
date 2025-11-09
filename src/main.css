@@ -46,7 +46,7 @@ border:0px solid red;
   padding: 2rem 5%;
   background-color: transparent;
 border:0px solid red;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -138,7 +138,7 @@ border:0px solid red;
   padding: 2rem 5%;
   background-color: transparent;
 border:0px solid red;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -179,9 +179,9 @@ border:0px solid red;
 .icon-feature{
   width: 80px;
   height: 80px;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .box-describe-icon-feature{
@@ -239,6 +239,18 @@ border:0px solid red;
 }
 
 
+.section-calendar{
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  height: auto;
+  align-items: center;
+  gap: 5rem;
+  padding: 2rem 5%;
+  background-color: transparent;
+border:0px solid red;
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
 
 
@@ -251,7 +263,7 @@ display: grid;
   padding: 2rem 5%;
   background-color: transparent;
 border:0px solid red;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -299,9 +311,26 @@ border:0px solid red;
   background-position: center;
 }
 
-
-
-
+.icon-calendar-clock{
+  background-image:url("./img/calendar_clock.svg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-share{
+  background-image:url("./img/share.svg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-notifications{
+  background-image:url("./img/notifications.svg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-automation{
+  background-image:url("./img/automation.svg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .section-base{
   display: grid;
   grid-template-columns:1fr;
@@ -311,8 +340,9 @@ border:0px solid red;
   padding: 0;
   background-color: transparent;
 border:0px solid red;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0px auto;
+  z-index:2;
 }
 
 .section-base > .section-base-left, .section-base-right{
@@ -338,7 +368,10 @@ border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
   padding-top: 40px;
   padding-bottom: 40px;
 }
-
+ .section-base-web{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
 
 
@@ -385,7 +418,21 @@ border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
 
 
 
-
+.context-web-service{
+  display: grid;
+  grid-template-columns: 0.4fr 1fr 0.4fr;
+  height: auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0%;
+  background-color: transparent;
+border:1px solid red;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.border-momentaneo{
+  border:0px solid #000
+}
 
 
 
@@ -430,6 +477,14 @@ border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
 .bg-base{
   background-image:url("./img/base.svg") ;
   background-repeat: no-repeat;
+}
+.bg-base2{
+  background-image:url("./img/base2.svg") ;
+  background-repeat: no-repeat;
+}
+.bg-base-services{
+  background-color:#fff;
+
 }
 
             .section-type{
@@ -478,6 +533,10 @@ border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
               max-width: 90%;
             }
             .section-base-main{
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+.section-base-web{
   padding-top: 0px;
   padding-bottom: 20px;
 }
@@ -539,15 +598,23 @@ border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
 }
 
 
+.mt20{
+  margin-top:20px
+}
+
+.text-right{
+  text-align: right;
+}
 
 
 
 
 
-
-
-
-
+.calendar {
+  transition: all 0.4s ease;
+  min-height: 300px;
+  border:0px solid #000
+}
 
 
 
