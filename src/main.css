@@ -75,7 +75,7 @@ border:0px solid red;
             justify-content: center;
             overflow: hidden;
         }
-.img-hero{
+.img-hero, .callendar-img{
   max-width: 100%;
 }
 .box{
@@ -241,7 +241,7 @@ border:0px solid red;
 
 .section-calendar{
   display: grid;
-  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-columns: 0.6fr 0.4fr;
   height: auto;
   align-items: center;
   gap: 5rem;
@@ -272,7 +272,6 @@ border:0px solid red;
 .content-icon-gallery{
   display: flex;
   flex-direction: column;
-  
   gap: 10px;
   align-items: center;
 }
@@ -285,7 +284,9 @@ border:0px solid red;
   background-color: #f5f5f5;
 }
 
-
+.cal-full{
+              display:nonde
+            }
 
 
 .content-row-icon-gallery{
@@ -293,6 +294,7 @@ border:0px solid red;
   gap: 20px;
   padding: 10px;
   margin-top: 20px;
+  justify-content: flex-end;
 }
 .icon-organize{
   background-image:url("./img/organize.svg") ;
@@ -512,6 +514,19 @@ border:1px solid red;
             .img-base{
               max-width: 90%;
             }
+            .icon-gallery{
+              width: 50px;
+              height: 50px;
+              background-size: 80%;
+            }
+            .title-icon-gallery{
+              font-size: 0.8em;
+            }
+            .calendar-section{
+              display: flex;
+              justify-content: center;
+            }
+  
             
         }
 
@@ -611,7 +626,9 @@ border:1px solid red;
 
 
 .calendar {
+  display: flex;
   transition: all 0.4s ease;
+  max-width: 100%;
   min-height: 300px;
   border:0px solid #000
 }
