@@ -120,10 +120,12 @@ border:0px solid red;
  
   color: #fff;
 }
+
 .context-section{
   text-align: center;
   font-family:"Quicksand", sans-serif;
   max-width: 700px;
+  height: auto;
   margin: auto;
   font-size: 1.2em;
   color: #fff;
@@ -241,7 +243,7 @@ border:0px solid red;
 
 .section-calendar{
   display: grid;
-  grid-template-columns: 0.6fr 0.4fr;
+  grid-template-columns: 0.3fr 0.7fr;
   height: auto;
   align-items: center;
   gap: 5rem;
@@ -277,11 +279,13 @@ border:0px solid red;
 }
 
 .icon-gallery{
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border:1px solid #ddd;
   border-radius: 10px;
-  background-color: #f5f5f5;
+  background-color: #fff;
+  background-size: 60%;
+  box-shadow: 1px 1px 7px #ddd;
 }
 
 .cal-full{
@@ -294,7 +298,7 @@ border:0px solid red;
   gap: 20px;
   padding: 10px;
   margin-top: 20px;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .icon-organize{
   background-image:url("./img/organize.svg") ;
@@ -489,9 +493,7 @@ border:1px solid red;
 
 }
 
-            .section-type{
-              padding: 40px 0px ;
-            }
+     
 
 @media (max-width: 968px) {
             .section-hero {
@@ -506,7 +508,7 @@ border:1px solid red;
             .section-features, .section-masonry, .section-calendar{
               grid-template-columns: 1fr;
                 gap: 1rem;
-                padding: 3rem 5%;
+                padding: 1rem 5%;
             }
             .section-type{
               padding: 0 ;
@@ -555,7 +557,9 @@ border:1px solid red;
   padding-top: 0px;
   padding-bottom: 20px;
 }
-
+.bg-first-section{
+  margin-bottom: 0;
+}
         }
 
 
