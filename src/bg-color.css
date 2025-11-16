@@ -59,7 +59,7 @@
 
       background-image:url("./img/bg-first-section.svg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
 }
 .color-p{
