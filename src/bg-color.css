@@ -62,6 +62,13 @@
   background-size: cover;
   background-position: center;
 }
+.bg-sec-section{
+
+      background-image:url("./img/bg-sec-section.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .color-p{
     color: #1075B0;
 }
