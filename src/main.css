@@ -148,7 +148,7 @@ border:0px solid red;
 
 
 
-.content-feature-text{
+.content-feature-text, .content-context-text{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -534,14 +534,14 @@ border:1px solid red;
         order: 2; /* baja */
     }
 
-    .content-feature-text {
+    .content-context-text {
         order: 1; /* sube */
     }
 
     .gallery-section{
 order: 2; /* baja */
     }
-    .content-feature-text{
+    .content-context-text{
       order: 1; /* sube */
     }
         }
@@ -580,14 +580,14 @@ order: 2; /* baja */
         order: 2; /* baja */
     }
 
-    .content-feature-text {
+    .content-context-text {
         order: 1; /* sube */
     }
 
     .gallery-section{
 order: 2; /* baja */
     }
-    .content-feature-text{
+    .content-context-text{
       order: 1; /* sube */
     }
 
