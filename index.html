@@ -24,7 +24,7 @@
 
                     <div class="controls-hero">
                             <button class="btn-go plr20">Hacer Pre-registro</button>
-                            <button class="btn-more">Saber mas</button>
+                            <a href="#section-type"><button class="btn-more">Saber mas</button></a>
                         </div>
                 </div>
                 <div class="hero-image">
@@ -34,7 +34,7 @@
                 </div>
             </section>
         </section>
-        <section class="bg-first-section">
+        <section class="bg-first-section" id="section-type">
             <div class="box  pt40 pb40 plr20">
                 <h2 class="subtitle-section mb20">Descubra las posibilidades</h2>
                 <p class="context-section">Sea de los primeros en tener un perfil de su negocio en munpros, y aproveche los veneficios que munpros podra tener a nivel nacional.</p>
@@ -43,7 +43,7 @@
 
         </section>
         
-        <section class=" bg-grey section-type">
+        <section class=" bg-grey section-type" >
             <div class="section-features ">
                 
                 <div class="content-feature-text">
@@ -228,42 +228,45 @@
                 <p class="context-section">Sea de los primeros en tener un perfil de su negocio en munpros, y aproveche los veneficios que munpros podra tener a nivel nacional.</p>
             </div>
             <div class="box">
-                
+                <footer class="footer">
+                    <div class="content-contact"></div>
+                    <div class="content-form">
+                        <div class="box">
+<h3 class="title-form p10">Pre registro</h3>
+                        </div>
+                        
+                        <form action="" class="form-register">
+                            <div class="radio-group">
+                                <p class="label-form">Que eres?</p>
+                                <input type="radio" id="op1" name="opcion" value="1">
+                                <label for="op1" class="label-radios">Empresa / Negocio / Tienda / Independiente</label>
+
+                                <input type="radio" id="op2" name="opcion" value="2">
+                                <label for="op2" class="label-radios">Cliente / Persona / Buscador</label>
+                            </div>
+                            <div class="content-control">
+                                <p class="label-form">Correo Electronico</p>
+                                <input type="email" class="input-form" placeholder="Regalanos tu email">
+                            </div>
+                            <div class="content-control flex-end">
+                                
+                                <input type="submit" value="Enviar" class="btn-form">
+                            </div>
+                        </form>
+                    </div>
+                </footer>
             </div>
 
-   
+   <br><br><br><br>
 
         </section>
-         <!--
-        <section class=" section-context-web ">
-            <div class="box  pt40 pb40 plr20 mt20">
-                <h2 class="subtitle-section mb20 color-black">Ofresca sus Servicios</h2>
-                <p class="context-section color-black">Publique sus productos, añadiendo imagenes geniales que lo describan con solo ver.</p>
-            </div>
-            <div class="context-web-service">
-                <div class="box border-momentaneo">
-                    <img src="./src/img/servicio.svg" alt="">
-                </div>
-                <div class="box border-momentaneo">
-                    <div class="box border-momentaneo">
-                    <img src="./src/img/reloj.svg" alt="">
-                    </div>
-                    <div class="box border-momentaneo">
-                        algo
-                    </div>
-                </div>
-                <div class="box border-momentaneo">
-                    <img src="./src/img/servicio.svg" alt="">
-                </div>
-            </div>
-           
-        </section>-->
+     
             
-        <br><br><br><br><br>
+        
     </main>
 
    
-    <footer></footer>
+    
 <script>
   const gallery = document.querySelector('.gallery');
   const reloadBtn = document.getElementById('reloadGallery');
