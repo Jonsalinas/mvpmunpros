@@ -531,7 +531,7 @@ border:1px solid red;
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: auto;
-  max-width: 1280px;
+  max-width: 1024px;
   border:0px solid #fff;
   margin: auto;
   padding: 10px;
@@ -570,6 +570,7 @@ display: flex;
 
 .input-form{
   height:35px;
+  width: 50%;
   border-style: none;
   border-radius: 8px;
   padding: 0px 10px;
@@ -593,7 +594,7 @@ display: flex;
   color:#fff
 }
 
-.radio-group input[type="radio"] {
+.radio-group input[type="checkbox"] {
     display: none; /* ocultar radio original */
 }
 
@@ -621,19 +622,46 @@ display: flex;
 }
 
 /* Cuando el radio está seleccionado */
-.radio-group input[type="radio"]:checked + .label-radios {
-    background-color: #4a8bff;
+.radio-group input[type="checkbox"]:checked + .label-radios {
+    background-color: #1451C1;
+  border-color: #1451C1;
     color: white;
-    border-color: #4a8bff;
+    
 }
 
 
+.row-net{
+  display: flex;
+  flex-direction: row;
 
+}
 
+.icon-network{
+  display: flex;
+  width: 45px;
+  height: 45px;
+  border:0px solid #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
-
-
-
+.label-net{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 45px;
+  border:0px solid #000;
+  padding: 0px 20px;
+  color:#fff
+}
+.icon-facebook{
+  background-image: url("./img/icon-facebook.svg") ;
+}
+.icon-whatsapp{
+  background-image: url("./img/icon-whatsapp.svg") ;
+}
 
 
 
@@ -699,11 +727,7 @@ order: 2; /* baja */
     .content-context-text{
       order: 1; /* sube */
     }
-    .footer{
-  display: grid;
-  grid-template-columns: 1fr;
 
-}
         }
 
         @media (max-width: 640px) {
