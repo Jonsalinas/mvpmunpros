@@ -1,8 +1,11 @@
 export default async function handler(req, res) {
   console.log("🚀 La función fue ejecutada");
 
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Método no permitido" });
+   if (req.method == "POST") {
+    return res.status(405).json({ error: "METODO POST" });
+  }
+    if (req.method == "GET") {
+    return res.status(405).json({ error: "Método GET" });
   }
 
   try {
