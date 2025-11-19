@@ -1,14 +1,20 @@
 export default async function handler(req, res) {
+  console.log("🚀 La función fue ejecutada");
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido" });
   }
 
-  const { email, opcion } = req.body;
+  try {
+    const { email, opcion } = req.body;
 
-  // Aquí lo puedes guardar en un servicio externo
-  // Ejemplo: mandar a tu correo (brevo, mailgun), o a una base de datos.
+    console.log("📩 Email recibido:", email);
+    console.log("🔘 Opción seleccionada:", opcion);
 
-  console.log("Nuevo registro:", email, opcion);
+    return res.status(200).json({ message: "Guardado" });
 
-  return res.status(200).json({ message: "Guardado" });
+  } catch (error) {
+    console.error("❌ Error:", error);
+    return res.status(500).json({ error: "Error interno" });
+  }
 }
