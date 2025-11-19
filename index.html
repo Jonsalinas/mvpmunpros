@@ -235,22 +235,22 @@
                             <h3 class="title-form p10">Pre registro</h3>
                         </div>
                         
-                        <form action="" class="form-register">
+                        <form class="form-register" id="form">
                             <div class="radio-group">
                                 <p class="label-form mb20">Como ustilizarias munpros?</p>
                                 <p class="label-form italic">Siendo!</p>
-                                <input type="radio" id="op1" name="opcion" value="1">
+                                <input type="radio" id="op1"  name="opcion" value="a">
                                 <label for="op1" class="label-radios">Empresa / Negocio / Tienda / Independiente</label>
 
-                                <input type="radio" id="op2" name="opcion" value="2">
+                                <input type="radio" id="op2" name="opcion" value="b" >
                                 <label for="op2" class="label-radios">Cliente / Persona / Buscador</label>
                                 
-                                <input type="radio" id="op3" name="opcion" value="3">
+                                <input type="radio" id="op3" name="opcion" value="c">
                                 <label for="op3" class="label-radios">Ambos</label>
                             </div>
                             <div class="content-control mb40 mt20">
                                 <p class="label-form">Correo Electronico</p>
-                                <input type="email" class="input-form" placeholder="Regalanos tu email">
+                                <input type="email" class="input-form" name="email" placeholder="Regalanos tu email">
                             </div>
                             
                             <div class="content-control flex-end">
@@ -312,6 +312,25 @@
 
   loadGallery();
   reloadBtn.addEventListener('click', loadGallery);
+
+  
+document.getElementById("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const datos = {
+    email: e.target.email.value,
+    opcion: document.querySelector('input[name="opcion"]:checked').value
+  };
+
+  const res = await fetch("/api/save", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(datos)
+  });
+
+  alert("Gracias por registrarte");
+});
+
 </script>
 
 
