@@ -319,16 +319,20 @@ document.getElementById("form").addEventListener("submit", async (e) => {
 
   const datos = {
     email: e.target.email.value,
-    opcion: document.querySelector('input[name="opcion"]:checked').value
+    opcion: document.querySelector("input[name='opcion']:checked")?.value || null
   };
-console.log(datos)
-  const res = await fetch("https://mvpmunpros.vercel.app/api/save", {
+
+  const res = await fetch("/api/save", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(datos)
   });
 
-  alert("Gracias por registrarte");
+  const data = await res.json();
+
+  console.log("Respuesta del server:", data);
+
+  alert("Gracias por registrarte!");
 });
 
 </script>
