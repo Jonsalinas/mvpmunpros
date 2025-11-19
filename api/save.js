@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   console.log("🚀 La función fue ejecutada");
 
- /* if (req.method !== "POST") {
+  if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido" });
   }
 
@@ -16,5 +16,5 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error("❌ Error:", error);
     return res.status(500).json({ error: "Error interno" });
-  }*/
+  }
 }
