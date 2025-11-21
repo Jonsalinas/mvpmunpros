@@ -26,7 +26,7 @@ export default async function handler(req, res) {
       }
     });*/
 console.log(email)
-    return res.status(200).json({ message: "Guardado en Google Sheets" });
+    return res.status(200).json({ message: "Guardado en Google Sheets"+email });
 
   } catch (error) {
     console.error("❌ Error:", error);
