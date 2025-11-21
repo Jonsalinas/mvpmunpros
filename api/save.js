@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   try {
     const { email, opcion } = req.body;
 
- /*   // Autenticación con Google
+    // Autenticación con Google
     const auth = new google.auth.GoogleAuth({
       credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
       scopes: ["https://www.googleapis.com/auth/spreadsheets"]
@@ -24,9 +24,8 @@ export default async function handler(req, res) {
       requestBody: {
         values: [[email, opcion, new Date().toLocaleString("es-HN")]]
       }
-    });*/
-console.log(email)
-    return res.status(200).json({ message: "Guardado en Google Sheets"+email });
+    });
+    return res.status(200).json({ message: "Guardado en Google Sheets" });
 
   } catch (error) {
     console.error("❌ Error:", error);
