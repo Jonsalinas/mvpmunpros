@@ -235,22 +235,22 @@
                             <h3 class="title-form p10">Pre registro</h3>
                         </div>
                         
-                        <form class="form-register" id="form">
+                        <form class="form-register" id="miForm">
                             <div class="radio-group">
                                 <p class="label-form mb20">Como ustilizarias munpros?</p>
                                 <p class="label-form italic">Siendo!</p>
-                                <input type="radio" id="op1"  name="opcion" value="a">
+                                <input type="radio" id="op1"  name="option" value="a">
                                 <label for="op1" class="label-radios">Empresa / Negocio / Tienda / Independiente</label>
 
-                                <input type="radio" id="op2" name="opcion" value="b" >
+                                <input type="radio" id="op2" name="option" value="b" >
                                 <label for="op2" class="label-radios">Cliente / Persona / Buscador</label>
                                 
-                                <input type="radio" id="op3" name="opcion" value="c">
+                                <input type="radio" id="op3" name="option" value="c">
                                 <label for="op3" class="label-radios">Ambos</label>
                             </div>
                             <div class="content-control mb40 mt20">
                                 <p class="label-form">Correo Electronico</p>
-                                <input type="email" class="input-form" name="email" placeholder="Regalanos tu email">
+                                <input type="email" class="input-form" name="email" id="email" placeholder="Regalanos tu email">
                             </div>
                             
                             <div class="content-control flex-end">
@@ -313,7 +313,31 @@
   loadGallery();
   reloadBtn.addEventListener('click', loadGallery);
 
+
+
+
+    
+document.getElementById('miForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
   
+  const data = {
+    email: document.getElementById('email').value,
+    option: document.querySelector('input[name="option"]:checked').value
+  };
+  
+  try {
+    const response = await fetch('TU_URL_DEL_SCRIPT_AQUI', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+    
+    alert('¡Datos enviados!');
+    e.target.reset();
+  } catch (error) {
+    alert('Error al enviar');
+  }
+});
+/*  
 document.getElementById("form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -333,7 +357,7 @@ document.getElementById("form").addEventListener("submit", async (e) => {
   console.log("Respuesta del server:", data);
 
   alert("Gracias por registrarte!");
-});
+});*/
 
 </script>
 
