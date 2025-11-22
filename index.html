@@ -317,26 +317,7 @@
 
 
     
-document.getElementById('miForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const data = {
-    email: document.getElementById('email').value,
-    option: document.querySelector('input[name="option"]:checked').value
-  };
-  
-  try {
-    const response = await fetch('TU_URL_DEL_SCRIPT_AQUI', {
-      method: 'POST',
-      body: JSON.stringify(data)
-    });
-    
-    alert('¡Datos enviados!');
-    e.target.reset();
-  } catch (error) {
-    alert('Error al enviar');
-  }
-});
+
 /*  
 document.getElementById("form").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -359,6 +340,52 @@ document.getElementById("form").addEventListener("submit", async (e) => {
   alert("Gracias por registrarte!");
 });*/
 
+document.getElementById('miForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  // Obtener los datos del formulario
+  const email = document.getElementById('email').value;
+  const opcionSeleccionada = document.querySelector('input[name="option"]:checked');
+  
+  // Validar que se seleccionó una opción
+  if (!opcionSeleccionada) {
+    alert('Por favor selecciona una opción');
+    return;
+  }
+  
+  // Preparar los datos
+  const data = {
+    email: email,
+    option: opcionSeleccionada.value
+  };
+  
+  // Deshabilitar el botón mientras se envía
+  const button = e.target.querySelector('button[type="submit"]');
+  const textoOriginal = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Enviando...';
+  
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbxhCasTdoHffqYA0UPa54mVvoYVBL3oQo4k8DaXcxJiUhPdbZ2iTMUdMaKu8vWChK4/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+    
+    alert('¡Gracias! Te avisaremos del próximo lanzamiento 🚀');
+    e.target.reset();
+    
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Hubo un error. Por favor intenta de nuevo.');
+  } finally {
+    button.disabled = false;
+    button.textContent = textoOriginal;
+  }
+});
 </script>
 
 
