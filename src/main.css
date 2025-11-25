@@ -383,7 +383,6 @@ border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
 }
 
 
-
 .galeria {
   display: flex;
   gap: 20px;
@@ -425,7 +424,9 @@ border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
 
 
 
-
+.bg-sec-section{
+  min-height: 100vh;
+}
 
 .context-web-service{
   display: grid;
@@ -443,7 +444,13 @@ border:1px solid red;
   border:0px solid #000
 }
 
+.note-form{
+  font-size: 0.9em;
+  align-content: end;
+  color:#aaa;
+  font-style: italic;
 
+}
 
 
 
@@ -476,7 +483,12 @@ border:1px solid red;
     padding: 10px;
     
 }
-
+.grid-input{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 0px solid #000;
+  align-content:end;
+}
 
 
 .bg{
@@ -591,16 +603,17 @@ display: flex;
   color:#eee
 }
 .btn-form{
-  display: flex;
+  display: block;
   justify-content: flex-end;
-  height:35px;
-  width: 70px;
+  padding: 10px 20px;
+  max-width: auto;
   border-style: none;
   border-radius: 8px;
   margin-top: 15px;
   cursor: pointer;
   background-color: #36A600;
-  color:#fff
+  color:#fff;justify-self: end; 
+
 }
 
 .radio-group input[type="radio"] {
@@ -641,19 +654,62 @@ display: flex;
 
 
 
+.footer{
+  display: flex;
+  max-width: 820px;
+  border:0px solid #000;
+  height: auto;
+  margin: auto;
+  padding: 5px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.content-icon-contact{
+  display: flex;
+  width: auto;
+  padding: 0px 10px;
+ border:0px solid #000;
+}
+
+.item-contact{
+  width: 35px;
+  height: 35px;
+  border: 0px solid #fff;
+  cursor: pointer;
+  
+
+}
 
 
+.logo-footer{
+  font-family: "Quicksand", sans-serif;
+  color:#fff
+}
+
+.icon-contact{
+background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+.icon-gmail{
+   background-image: url("./img/gmail.png") ;
+  
+}
+
+.icon-facebook{
+   background-image: url("./img/facebook.png") ;
+  
+}
+
+.icon-whatsapp{
+   background-image: url("./img/whatsapp.png") ;
+  
+}
 
 
-
-
-
-
-
-
-
-
-
+.item-contact:hover{
+  opacity: 0.8;
+}
 
 
 
@@ -712,6 +768,11 @@ order: 2; /* baja */
     .content-form-register{
   display: grid;
   width: 90%;
+
+}
+.grid-input{
+
+  grid-template-columns: 1fr;
 
 }
         }
@@ -773,6 +834,10 @@ order: 2; /* baja */
   display: grid;
   width: 90%;
 
+}
+.grid-input{
+
+  grid-template-columns: 1fr;
 }
         }
 
@@ -837,7 +902,9 @@ order: 2; /* baja */
 .mt20{
   margin-top:20px
 }
-
+.mt40{
+  margin-top:40px
+}
 .text-right{
   text-align: right;
 }
@@ -940,4 +1007,3 @@ order: 2; /* baja */
     columns: 4;
   }
 }
-
