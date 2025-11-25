@@ -10,7 +10,10 @@
 <title>munpros</title>
     <link rel="stylesheet" href="./src/main.css">
     <link rel="stylesheet" href="./src/bg-color.css">
+    <script>
 
+
+    </script>
 </head>
 <body>
     <main class="main">
@@ -248,22 +251,42 @@
                                 <input type="radio" id="op3" name="option" value="c">
                                 <label for="op3" class="label-radios">Ambos</label>
                             </div>
-                            <div class="content-control mb40 mt20">
+                            <div class="grid-input">
+                                <div class="content-control  mt20">
                                 <p class="label-form">Correo Electronico</p>
                                 <input type="email" class="input-form" name="email" id="email" placeholder="Regalanos tu email">
                             </div>
-                            
-                            <div class="content-control flex-end">
-                                
-                                <button type="submit">enviar</button>
+                            <div class="content-control  mt20">
+                                <p class="label-form" id="option-label">Nombre</p>
+                                <input type="text" class="input-form" name="name" id="name" >
                             </div>
-                            <p>Estaremos informandole en el proximo lanzamiento</p>
+                            
+                            </div>
+                           
+                            <div class="grid-input mt40">
+                                <p class="note-form">Descuida tu informacion es privada. te informaremos del proximo lanzamiento.</p>
+                                
+                                <button type="submit" class="btn-form">Enviar</button>
+                                
+                            </div>
+                            
                         </form>
                     </div>
                 </div>
+               <footer class="footer mt20">
+                    <div class="content-icon-contact">
+                        <div class="item-contact icon-contact icon-gmail"></div>
+                        <div class="item-contact icon-contact icon-facebook"></div>
+                        <div class="item-contact icon-contact icon-whatsapp"></div>
+                        
+                    </div>
+                    <h3 class="logo-footer">
+                        munpros
+                    </h3    >
+               </footer>
             </div>
 
-   <br><br><br><br>
+
 
         </section>
      
@@ -274,6 +297,8 @@
    
     
 <script>
+
+
   const gallery = document.querySelector('.gallery');
   const reloadBtn = document.getElementById('reloadGallery');
 
@@ -292,7 +317,6 @@
   }
 
   function loadGallery() {
-    // 🔸 Añadimos un efecto de desvanecimiento al limpiar
     gallery.style.opacity = '0';
     setTimeout(() => {
       gallery.innerHTML = '';
@@ -302,7 +326,6 @@
         const block = createBlock();
         gallery.appendChild(block);
 
-        // efecto de aparición escalonado
         setTimeout(() => block.classList.add('show'), i * 100);
       }
 
@@ -316,35 +339,15 @@
 
 
 
-    
-
-/*  
-document.getElementById("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const datos = {
-    email: e.target.email.value,
-    opcion: document.querySelector("input[name='opcion']:checked")?.value || null
-  };
-
-  const res = await fetch("/api/save", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(datos)
-  });
-
-  const data = await res.json();
-
-  console.log("Respuesta del server:", data);
-
-  alert("Gracias por registrarte!");
-});*/
+  
 
 document.getElementById('miForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   
   // Obtener los datos del formulario
   const email = document.getElementById('email').value;
+
+  const name = document.getElementById('name').value;
   const opcionSeleccionada = document.querySelector('input[name="option"]:checked');
   
   // Validar que se seleccionó una opción
@@ -352,11 +355,13 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
     alert('Por favor selecciona una opción');
     return;
   }
+
   
   // Preparar los datos
   const data = {
     email: email,
-    option: opcionSeleccionada.value
+    option: opcionSeleccionada.value,
+    name: name
   };
   
   // Deshabilitar el botón mientras se envía
@@ -375,7 +380,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
       body: JSON.stringify(data)
     });
     
-    alert('¡Gracias! Te avisaremos del próximo lanzamiento 🚀');
+    alert('¡Gracias! Te avisaremos del próximo lanzamiento');
     e.target.reset();
     
   } catch (error) {
@@ -385,6 +390,35 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
     button.disabled = false;
     button.textContent = textoOriginal;
   }
+});
+
+
+
+// Obtener todos los radio buttons
+const radios = document.querySelectorAll('input[name="option"]');
+
+// Escuchar el cambio en cada uno
+radios.forEach(radio => {
+  radio.addEventListener('change', (e) => {
+    const valorSeleccionado = e.target.value;
+    console.log('Seleccionaste:', valorSeleccionado);
+    
+    // Aquí haces lo que necesites
+    if (valorSeleccionado === 'a') {
+          document.getElementById('option-label').textContent = "Su negocio se llama?"
+            document.getElementById('name').placeholder = "Su negocio"
+          
+
+    } else if (valorSeleccionado === 'b') {
+      document.getElementById('option-label').textContent = "Cual es su nombre?"
+      document.getElementById('name').placeholder = "Su nombre"
+      // Tu código aquí
+    } else if (valorSeleccionado === 'c') {
+      document.getElementById('option-label').textContent = "Su negocio se llama?"
+      document.getElementById('name').placeholder = "Su negocio"
+      // Tu código aquí
+    }
+  });
 });
 </script>
 
