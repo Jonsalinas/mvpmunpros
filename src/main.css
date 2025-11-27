@@ -16,6 +16,7 @@ h1 {
 
 .main{
   display: block;
+  position: relative;
   width: 100%;
   height: auto;
   
@@ -1006,4 +1007,45 @@ order: 2; /* baja */
   .gallery {
     columns: 4;
   }
+}
+
+
+
+
+.main-modal{
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+.modal{
+  display: none;
+  flex-direction: column;
+  width:600px;
+  height: 400px;
+  background-color: white;
+  border-radius: 8px;
+}
+.modal-head{
+  display: flex;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.modal-body {
+  flex: 1; /* <<< LO IMPORTANTE */
+  overflow-y: auto; /* opcional para scroll interno */
+}
+.modal-footer {
+  height: 40px;
+  width: 100%;
+  border-top: 1px solid red;
 }
