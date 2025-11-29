@@ -130,7 +130,7 @@ border:0px solid red;
   max-width: 700px;
   height: auto;
   margin: auto;
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #fff;
 }
 
@@ -375,6 +375,7 @@ border:0px solid #eee;box-shadow: 0px 37px 30px -10px rgba(0,0,0,0.3);
 }
 
 .section-base-main{
+  min-height: 100vh;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -657,13 +658,22 @@ display: flex;
 
 .footer{
   display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 0px;
+  background-color: transparent;border: 0px solid #f0f0f0;
+  
+}
+.content-footer{
+  display: flex;
+  flex-direction: row;
+  width: 820px;
   max-width: 820px;
-  border:0px solid #000;
-  height: auto;
   margin: auto;
-  padding: 5px;
-  justify-content: flex-start;
-  align-items: center;
+  padding: 10px;
+
+  background-color: transparent;border: 0px solid #f0f0f0;
+  
 }
 .content-icon-contact{
   display: flex;
@@ -680,11 +690,19 @@ display: flex;
   
 
 }
-
-
+.receibe{
+  font-weight: normal;
+  font-size: 0.7em;
+}
+.title-footer{
+  font-family: "Quicksand", sans-serif;
+  color:#fff;
+  text-align: left;
+}
 .logo-footer{
   font-family: "Quicksand", sans-serif;
-  color:#fff
+  color:#fff;
+  text-align: center;
 }
 
 .icon-contact{
@@ -917,7 +935,12 @@ order: 2; /* baja */
 .italic{
   font-style: italic;
 }
+.bold-important{
+  font-weight: 500;
+  color:#002455;
 
+
+}
 
 .calendar {
   display: flex;
@@ -1027,7 +1050,7 @@ order: 2; /* baja */
   align-items: center;
 }
 .modal{
-  display: none;
+  display: flex;
   flex-direction: column;
   width:600px;
   height: 400px;
