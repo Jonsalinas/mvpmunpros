@@ -381,7 +381,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   const email = document.getElementById('email').value;
   const name = document.getElementById('name').value;
   const opcionSeleccionada = document.querySelector('input[name="option"]:checked');
-  
+  console.log(name)
   // Validar que se seleccionó una opción
   if (!opcionSeleccionada) {
     alert('Por favor selecciona una opción');
@@ -394,7 +394,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   button.disabled = true;
   button.textContent = 'Verificando...';
   
-  try {
+  /*try {
     // Primero verificar si el email ya existe (con GET)
     const checkUrl = `https://script.google.com/macros/s/AKfycbw0dcOEN-E9FmyHdniN5lQISUePVtt3cFPDMtkyxCFmYhC2imfaB1cgMD9_qepxaLn-yA/exec?action=check&email=${encodeURIComponent(email)}`;
     const checkResponse = await fetch(checkUrl);
@@ -434,7 +434,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   } finally {
     button.disabled = false;
     button.textContent = textoOriginal;
-  }
+  }*/
 });
 
 // El resto de tu código...
