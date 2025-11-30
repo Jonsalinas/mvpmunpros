@@ -394,7 +394,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   button.disabled = true;
   button.textContent = 'Verificando...';
   
- try {https:
+ try {
     // Primero verificar si el email ya existe (con GET)
     const checkUrl = `https://script.google.com/macros/s/AKfycbw0dcOEN-E9FmyHdniN5lQISUePVtt3cFPDMtkyxCFmYhC2imfaB1cgMD9_qepxaLn-yA/exec?action=check&email=${encodeURIComponent(email)}`;
     const checkResponse = await fetch(checkUrl);
