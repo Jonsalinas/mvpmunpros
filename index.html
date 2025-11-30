@@ -379,7 +379,6 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   
   // Obtener los datos del formulario
   const email = document.getElementById('email').value;
-
   const name = document.getElementById('name').value;
   const opcionSeleccionada = document.querySelector('input[name="option"]:checked');
   
@@ -388,50 +387,36 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
     alert('Por favor selecciona una opción');
     return;
   }
-
   
-  // Preparar los datos
-  const data = {
-    email: email,
-    option: opcionSeleccionada.value,
-    name: name
-  };
-  
-  // Deshabilitar el botón mientras se envía
+  // Deshabilitar el botón mientras se procesa
   const button = e.target.querySelector('button[type="submit"]');
   const textoOriginal = button.textContent;
   button.disabled = true;
-  button.textContent = 'Enviando...';
+  button.textContent = 'Verificando...';
+  
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbx3YIiWREMavHl_4VXVyjZihL7o53RkFG8HCVHb3ZO4MRBi95FdTAHLZV9k9Ja0mv4_/exec', {
-      method: 'POST',
-        mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-      redirect: 'follow'
-    });
+    // Primero verificar si el email ya existe (con GET)
+    const checkUrl = `https://script.google.com/macros/s/AKfycbxhCasTdoHffqYA0UPa54mVvoYVBL3oQo4k8DaXcxJiUhPdbZ2iTMUdMaKu8vWChK4/exec?action=check&email=${encodeURIComponent(email)}`;
     
-    const result = await response.json();
+    const checkResponse = await fetch(checkUrl);
+    const checkResult = await checkResponse.json();
     
-    if (result.status === 'success') {
-      alert('¡Gracias! Te avisaremos del próximo lanzamiento');
-      e.target.reset();
-    } else {
-      alert(result.message || 'Este correo ya está registrado');
+    if (checkResult.exists) {
+      alert('Este correo ya está registrado');
+      button.disabled = false;
+      button.textContent = textoOriginal;
+      return;
     }
     
-  } catch (error) {
-    console.error('Error:', error);
-    // Como usas no-cors, asumimos que funcionó si no hay error
-    alert('¡Gracias! Te avisaremos del próximo lanzamiento');
-    e.target.reset();
-  } finally {
-    button.disabled = false;
-    button.textContent = textoOriginal;
-  }
-  /*try {
+    // Si no existe, proceder a registrar
+    button.textContent = 'Enviando...';
+    
+    const data = {
+      email: email,
+      option: opcionSeleccionada.value,
+      name: name
+    };
+    
     await fetch('https://script.google.com/macros/s/AKfycbxhCasTdoHffqYA0UPa54mVvoYVBL3oQo4k8DaXcxJiUhPdbZ2iTMUdMaKu8vWChK4/exec', {
       method: 'POST',
       mode: 'no-cors',
@@ -450,34 +435,26 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   } finally {
     button.disabled = false;
     button.textContent = textoOriginal;
-  }*/
+  }
 });
 
-
-
-// Obtener todos los radio buttons
+// El resto de tu código...
 const radios = document.querySelectorAll('input[name="option"]');
 
-// Escuchar el cambio en cada uno
 radios.forEach(radio => {
   radio.addEventListener('change', (e) => {
     const valorSeleccionado = e.target.value;
     console.log('Seleccionaste:', valorSeleccionado);
     
-    // Aquí haces lo que necesites
     if (valorSeleccionado === 'a') {
-          document.getElementById('option-label').textContent = "Su negocio se llama?"
-            document.getElementById('name').placeholder = "Su negocio"
-          
-
+      document.getElementById('option-label').textContent = "Su negocio se llama?"
+      document.getElementById('name').placeholder = "Su negocio"
     } else if (valorSeleccionado === 'b') {
       document.getElementById('option-label').textContent = "Cual es su nombre?"
       document.getElementById('name').placeholder = "Su nombre"
-      // Tu código aquí
     } else if (valorSeleccionado === 'c') {
       document.getElementById('option-label').textContent = "Su negocio se llama?"
       document.getElementById('name').placeholder = "Su negocio"
-      // Tu código aquí
     }
   });
 });
