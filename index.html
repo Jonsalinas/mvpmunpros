@@ -381,7 +381,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   const email = document.getElementById('email').value;
   const name = document.getElementById('name').value;
   const opcionSeleccionada = document.querySelector('input[name="option"]:checked');
-  console.log(name)
+
   // Validar que se seleccionó una opción
   if (!opcionSeleccionada) {
     alert('Por favor selecciona una opción');
@@ -415,7 +415,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
       option: opcionSeleccionada.value,
       name: name
     };
-    console.log(data)
+    console.log("hola",name)
    /* await fetch('https://script.google.com/macros/s/AKfycbxhCasTdoHffqYA0UPa54mVvoYVBL3oQo4k8DaXcxJiUhPdbZ2iTMUdMaKu8vWChK4/exec', {
       method: 'POST',
       mode: 'no-cors',
