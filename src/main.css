@@ -736,6 +736,9 @@ background-position: center;
 
 
 @media (max-width: 968px) {
+  .section-base-main{
+  min-height: auto;
+}
             .section-hero {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -797,6 +800,9 @@ order: 2; /* baja */
         }
 
         @media (max-width: 640px) {
+          .section-base-main{
+  min-height: auto;
+}
             .content-hero h1 {
                 font-size: 2rem;
             }
