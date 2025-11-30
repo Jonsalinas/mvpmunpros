@@ -667,7 +667,7 @@ display: flex;
 .content-footer{
   display: flex;
   flex-direction: row;
-  width: 820px;
+
   max-width: 820px;
   margin: auto;
   padding: 10px;
