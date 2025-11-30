@@ -405,6 +405,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   try {
     const response = await fetch('https://script.google.com/macros/s/AKfycbx3YIiWREMavHl_4VXVyjZihL7o53RkFG8HCVHb3ZO4MRBi95FdTAHLZV9k9Ja0mv4_/exec', {
       method: 'POST',
+        mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
