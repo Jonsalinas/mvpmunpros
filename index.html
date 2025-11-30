@@ -394,7 +394,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   button.disabled = true;
   button.textContent = 'Verificando...';
   
-  /*try {
+ try {
     // Primero verificar si el email ya existe (con GET)
     const checkUrl = `https://script.google.com/macros/s/AKfycbw0dcOEN-E9FmyHdniN5lQISUePVtt3cFPDMtkyxCFmYhC2imfaB1cgMD9_qepxaLn-yA/exec?action=check&email=${encodeURIComponent(email)}`;
     const checkResponse = await fetch(checkUrl);
@@ -415,8 +415,8 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
       option: opcionSeleccionada.value,
       name: name
     };
-    
-    await fetch('https://script.google.com/macros/s/AKfycbxhCasTdoHffqYA0UPa54mVvoYVBL3oQo4k8DaXcxJiUhPdbZ2iTMUdMaKu8vWChK4/exec', {
+    console.log(data)
+   /* await fetch('https://script.google.com/macros/s/AKfycbxhCasTdoHffqYA0UPa54mVvoYVBL3oQo4k8DaXcxJiUhPdbZ2iTMUdMaKu8vWChK4/exec', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
@@ -424,7 +424,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
       },
       body: JSON.stringify(data)
     });
-    
+    */
     alert('¡Gracias! Te avisaremos del próximo lanzamiento');
     e.target.reset();
     
@@ -434,7 +434,7 @@ document.getElementById('miForm').addEventListener('submit', async (e) => {
   } finally {
     button.disabled = false;
     button.textContent = textoOriginal;
-  }*/
+  }
 });
 
 // El resto de tu código...
