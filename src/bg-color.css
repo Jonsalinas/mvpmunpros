@@ -1,55 +1,11 @@
-/*.bg-hero{
-    background-color: #fff;
-}
-.bg-grey{
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-}
-
-.bg-section-context{
-    background-color: #1075B0;
-}
-
-.color-p{
-    color: #1075B0;
-}
-
-.color-b{
-    color: #641CBA;
-}
-
-.bg-spetial{
-   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-}
-
-.color-black{
-    color:#000;
-}
-
-.color-que{
-    
-    color: #EF7722;
-    font-size: 1.5em;
-    font-family: "Caveat";
-}
-.color-quien{
-    color: #9112BC;
-    font-size: 1.5em;
-    font-family: "Caveat";
-}
-
-.color-pro{
-    color: #B65510;
-}
-
-.color-ser{
-    color: #BC9F17;
-}*/
 .bg-hero{
     background-color: #fff;
 }
 .bg-grey{
-    /*background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);*/
+    /*background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     background-image: linear-gradient(135deg, #fdfcfb 20%, #C3D8E2 100%);
+ background: #2A7B9B;
+background: radial-gradient(circle, rgba(42, 123, 155, 1) 0%, rgba(87, 141, 199, 1) 50%, rgba(163, 83, 237, 1) 100%);*/
 }
 
 .bg-section-context{
@@ -61,6 +17,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
 }
 .bg-sec-section{
 
@@ -68,6 +25,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
 }
 .color-p{
     color: #1075B0;
