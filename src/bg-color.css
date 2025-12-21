@@ -42,7 +42,9 @@ background: radial-gradient(circle, rgba(42, 123, 155, 1) 0%, rgba(87, 141, 199,
 .color-black{
     color:#000;
 }
-
+.color-white{
+    color:#eee;
+}
 .color-que{
     
     color: #EF7722;
