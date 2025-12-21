@@ -509,7 +509,7 @@ border:1px solid red;
   background-repeat: no-repeat;
 }
 .bg-base{
-  background-image:url("./img/base.svg") ;
+  background-image:url("./img/fondo_productos.svg") ;
   background-repeat: no-repeat;
 }
 .bg-base2{
@@ -805,14 +805,12 @@ order: 2; /* baja */
   grid-template-columns: 1fr;
 
 }
-.section-base-main{
-  min-height: auto;
-}
+
         }
 
         @media (max-width: 640px) {
           .section-base-main{
-  min-height: auto;
+  min-height: 100vh;
 }
             .content-hero h1 {
                 font-size: 2rem;
