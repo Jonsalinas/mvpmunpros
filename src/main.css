@@ -580,23 +580,16 @@ h1 {
   width: 100%;
   height: 100vh;
   padding: 30px 30px;
-  background: hsla(46, 73%, 75%, 1);
-
-  background: linear-gradient(225deg, hsla(46, 73%, 75%, 1) 0%, hsla(176, 73%, 88%, 1) 100%);
-
-  background: -moz-linear-gradient(225deg, hsla(46, 73%, 75%, 1) 0%, hsla(176, 73%, 88%, 1) 100%);
-
-  background: -webkit-linear-gradient(225deg, hsla(46, 73%, 75%, 1) 0%, hsla(176, 73%, 88%, 1) 100%);
-
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EED991", endColorstr="#CCF7F4", GradientType=1);
+  background-image: url("./img/fondo4.svg");
+  background-repeat: no-repeat;
 }
 
 .subtitle-section-mobile {
 
   text-align: left;
   font-family: "Quicksand", sans-serif;
-  font-size: 1.5em;
-  color: #005461;
+  font-size: 1.8em;
+  color: #6A4F1B;
   margin-bottom: 10px;
 
 }
@@ -604,8 +597,8 @@ h1 {
 .context-section-mobile {
   text-align: left;
   font-family: "Quicksand", sans-serif;
-  font-size: 1em;
-  color: #005461;
+  font-size: 1.2em;
+  color: #6A4F1B;
 }
 
 
@@ -633,7 +626,7 @@ h1 {
 
 
 .img-base-mobile {
- width: 80%;
+  width: 80%;
   margin: auto;
   border-radius: 20px;
 
