@@ -525,19 +525,49 @@ border:1px solid red;
 
 
 
+.section-base-main-mobile{
+  width:100%;
+  height: 100vh;
+  padding: 30px 30px;
+  background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+}
+
+.subtitle-section-mobile{
+
+  text-align: left;
+  font-family:"Quicksand", sans-serif;
+  font-size: 1.5em;
+  color: #005461;
+  margin-bottom: 10px;
+  
+}
+
+.context-section-mobile{
+  text-align: left;
+  font-family:"Quicksand", sans-serif;
+  font-size: 1em;
+  color: #005461;
+}
 
 
 
+.section-base-center-mobile{
+  display: flex;
+
+  border:0px solid #000;
+  border-radius: 20px
+}
 
 
 
+.img-base-mobile{
+  max-width: 500px;
+  margin: auto;
+  border-radius: 20px;
 
+  
 
-
-
-
-
-
+}
 
 
 
