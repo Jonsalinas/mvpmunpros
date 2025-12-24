@@ -617,7 +617,7 @@ h1 {
   flex-direction: column;
 
   width: 100%;
-  height:auto;
+  height: auto;
   padding: 0;
   border: 0px solid #000;
 
@@ -629,32 +629,131 @@ h1 {
   width: 80%;
   margin: auto;
   border-radius: 20px;
-border:0px solid #000;
-text-align: right;
+  border: 0px solid #000;
+  text-align: right;
 
 
 }
 
 
 
-.title-product{
+.title-product {
   text-align: left;
   font-family: 'Courier New', Courier, monospace;
   margin-top: 40px;
-  color:#001BB7;
+  color: #1965D4;
+  font-weight: bold;
+  font-size: 1.5em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.title-product.activo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lemma-product {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: -30px;
+  color: #222;
   font-weight: bold;
   font-size: 1.5em;
 }
 
+.content-btn-more-products {
+  display: flex;
+  justify-content: right;
+}
 
-.lemma-product{
-text-align: right;
-  font-family:'Courier New', Courier, monospace;
-  margin-top: 0px;
-  color:#222;
+.btn-more-products {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #1965D4;
   font-weight: bold;
   font-size: 1.5em;
+  border-style: none;
+  cursor: pointer;
+  margin-top: 20px;
+  background-image: url("./img/arrow_next.png");
+  background-repeat: no-repeat;
+  background-size: 34px;
+  background-position: center;
+
+
+
 }
+
+
+
+
+.reloj-container img {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s ease;
+}
+
+.reloj-container img.activo {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
