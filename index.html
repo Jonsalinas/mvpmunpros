@@ -196,15 +196,17 @@
                 <p class="context-section-mobile ">Publique sus productos, añadiendo imágenes geniales que lo describan
                     con solo ver.</p>
             </div>
-            <p class="title-product">HILFIGER</p>
+            <p class="title-product" id="tituloProducto">HILFIGER</p>
             <div class="section-base-mobile">
-                <div class="section-base-center-mobile">
-                    <img src="./src/img/reloj_mobil.png" alt="" class="img-base-mobile">
+                <div class="section-base-center-mobile reloj-container">
+                    <img src="./src/img/reloj_mobil.png" alt="" class="img-base-mobile activo" id="reloj">
                 </div>
-                <p class="lemma-product">EL TIEMPO ES AHORA</p>
+
             </div>
-            
-            
+            <p class="lemma-product">El tiempo es ahora</p>
+            <div class="content-btn-more-products">
+                <button class="btn-more-products" id="btnNext"></button>
+            </div>
         </section>
 
 
@@ -517,6 +519,30 @@
                     // Tu código aquí
                 }
             });
+        });
+
+
+        const imagenes = ["./src/img/reloj_mobil.png", "./src/img/tenis_mobil.png", "./src/img/laptop_mobil.png"];
+        const titulos = [
+            "HILFIGER",
+            "NIKE AIR",
+            "LAPTOP"
+        ];
+        let index = 0;
+        const reloj = document.getElementById("reloj");
+        const titulo = document.getElementById("tituloProducto");
+
+        document.getElementById("btnNext").addEventListener("click", () => {
+            reloj.classList.remove("activo");
+            titulo.classList.remove("activo");
+
+            setTimeout(() => {
+                index = (index + 1) % imagenes.length;
+                reloj.src = imagenes[index];
+                titulo.textContent = titulos[index];
+                reloj.classList.add("activo");
+                titulo.classList.add("activo");
+            }, 400);
         });
     </script>
 
