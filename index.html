@@ -177,7 +177,7 @@
             </div>
         </section>
 
-        <!--
+        
          <section class="bg-base section-base-main ">
             <div class="box  pt40 pb40 plr20">
                 <h2 class="subtitle-section mb20 color-white">Luzca sus Productos</h2>
@@ -189,21 +189,22 @@
 
                 </div>
             </div>
-        </section>-->
-        <section class="section-base-main-mobile ">
+        </section>
+        <section class="section-base-main-mobile bg-product-movil">
             <div class="box">
                 <h3 class="subtitle-section-mobile ">Luzca sus Productos</h3>
                 <p class="context-section-mobile ">Publique sus productos, añadiendo imágenes geniales que lo describan
                     con solo ver.</p>
+                    <p class="title-product" id="tituloProducto">Accesorios</p>
             </div>
-            <p class="title-product" id="tituloProducto">HILFIGER</p>
+            
             <div class="section-base-mobile">
                 <div class="section-base-center-mobile reloj-container">
                     <img src="./src/img/reloj_mobil.png" alt="" class="img-base-mobile activo" id="reloj">
                 </div>
 
             </div>
-            <p class="lemma-product">El tiempo es ahora</p>
+            <p class="lemma-product" id="lemmaProducto">El tiempo es ahora</p>
             <div class="content-btn-more-products">
                 <button class="btn-more-products" id="btnNext"></button>
             </div>
@@ -219,13 +220,33 @@
                     Destaca y crea conexiones reales con tus clientes.</p>
             </div>
             <div class="section-base">
-                <div class="section-base-center" style="display: none;">
+                <div class="section-base-center">
                     <img src="./src/img/servicios_profesionales.png" alt="" class="img-base">
                 </div>
-                <div class="section-base-center">
-                    <img src="./src/img/SERVICIOS_mini.png" alt="" class="img-base">
-                </div>
             </div>
+        </section>
+
+        <section id="serviceMobile" class="section-base-main-mobile bg-service-movil">
+
+        <div class="box">
+                <h3 class="subtitle-section-mobile-services" id="serviceMobileTitle">Ofrezca sus Servicios</h3>
+                <p class="context-section-mobile ">Registre sus servicios profesionales o encuentre fácilmente lo
+                    que necesita.
+                    Destaca y crea conexiones reales con tus clientes.</p>
+            </div>
+
+
+            <div class="content-info-service-lemma">
+            <p class="lemma-services" id="lemmaServices"></p>
+
+    
+            </div>
+            <div class="content-info-service">
+                <button class="btn-more-services" id="btnNextService"></button>
+   
+    
+            </div>
+
         </section>
         <section style="background-color: #FCF8F8;">
             <div class="section-masonry ">
@@ -524,26 +545,95 @@
 
         const imagenes = ["./src/img/reloj_mobil.png", "./src/img/tenis_mobil.png", "./src/img/laptop_mobil.png"];
         const titulos = [
-            "HILFIGER",
-            "NIKE AIR",
-            "LAPTOP"
+            "Accesorios",
+            "Calzado",
+            "Tecnologia"
+        ];
+        const lemas = [
+            "El tiempo es ahora",
+            "Cuida tus pasos",
+            "Potencia tu mundo"
         ];
         let index = 0;
         const reloj = document.getElementById("reloj");
         const titulo = document.getElementById("tituloProducto");
+        const lema = document.getElementById("lemmaProducto");
 
         document.getElementById("btnNext").addEventListener("click", () => {
             reloj.classList.remove("activo");
             titulo.classList.remove("activo");
+            lema.classList.remove("activo");
 
             setTimeout(() => {
                 index = (index + 1) % imagenes.length;
                 reloj.src = imagenes[index];
                 titulo.textContent = titulos[index];
+                lema.textContent = lemas[index];
                 reloj.classList.add("activo");
                 titulo.classList.add("activo");
+                lema.classList.add("activo");
             }, 400);
         });
+
+
+
+
+
+const imagenesServicios = [
+  "./src/img/fondo11.jpg",
+  "./src/img/fondo12.jpg",
+  "./src/img/fondo13.jpg"
+];
+
+const lemasServicios = [
+  "Conectamos<br>personas con<br>servicios profesionales",
+  "Pensado<br>para todo tipo<br>de servicios",
+  "Potencia tu mundo"
+];
+
+const color = [
+  "lema-color2",
+  "lema-color2",
+  "lema-color1"
+];
+
+const colores = ["lema-color1", "lema-color2"];
+
+let indexServicios = 0;
+
+const lemmaServices = document.getElementById("lemmaServices");
+const sectionService = document.getElementById("serviceMobile");
+const serviceMobileTitle = document.getElementById("serviceMobileTitle");
+
+// inicial
+lemmaServices.innerHTML = lemasServicios[0];
+sectionService.style.backgroundImage = `url(${imagenesServicios[0]})`;
+lemmaServices.classList.add(color[0]);
+serviceMobileTitle.classList.add(color[0]);
+
+document.getElementById("btnNextService").addEventListener("click", () => {
+  lemmaServices.classList.remove("activo");
+
+  setTimeout(() => {
+    indexServicios = (indexServicios + 1) % imagenesServicios.length;
+
+    // quitar colores anteriores
+    lemmaServices.classList.remove(...colores);
+    serviceMobileTitle.classList.remove(...colores);
+
+    // cambiar contenido
+    lemmaServices.innerHTML = lemasServicios[indexServicios];
+    sectionService.style.backgroundImage = `url(${imagenesServicios[indexServicios]})`;
+
+    // aplicar color correcto
+    lemmaServices.classList.add(color[indexServicios]);
+    serviceMobileTitle.classList.add(color[indexServicios]);
+
+    lemmaServices.classList.add("activo");
+  }, 400);
+});
+
+
     </script>
 
 
