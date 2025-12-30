@@ -429,7 +429,7 @@ h1 {
 }
 
 .section-base-main {
-  display:block;
+  display: block;
   min-height: 100vh;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -575,8 +575,8 @@ h1 {
 
 
 
-.bg-product-movil{
-background-image: url("./img/fondo7.svg");
+.bg-product-movil {
+  background-image: url("./img/fondo7.svg");
 }
 
 
@@ -588,7 +588,7 @@ background-image: url("./img/fondo7.svg");
 }
 
 .section-base-main-mobile {
-display:none;
+  display: none;
   width: 100%;
   height: 100vh;
   padding: 30px 30px;
@@ -607,6 +607,7 @@ display:none;
   margin-bottom: 10px;
 
 }
+
 .subtitle-section-mobile-services {
   text-align: left;
   font-family: "Quicksand", sans-serif;
@@ -615,6 +616,7 @@ display:none;
 
 
 }
+
 .context-section-mobile {
   text-align: left;
   font-family: "Quicksand", sans-serif;
@@ -681,9 +683,10 @@ display:none;
   color: #760CAB;
   font-weight: bold;
   font-size: 1.5em;
-    transform: translateY(10px);
+  transform: translateY(10px);
   transition: all 0.4s ease;
 }
+
 .lemma-product.activo {
   opacity: 1;
   transform: translateY(0);
@@ -694,7 +697,8 @@ display:none;
   justify-content: right;
 }
 
-.btn-more-products, .btn-more-services  {
+.btn-more-products,
+.btn-more-services {
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -730,7 +734,7 @@ display:none;
 
 
 
-.content-info-service{
+.content-info-service {
   display: flex;
   position: absolute;
   height: auto;
@@ -742,7 +746,8 @@ display:none;
   padding: 0px 30px;
 
 }
-.content-info-service-lemma{
+
+.content-info-service-lemma {
   display: flex;
   position: absolute;
   height: auto;
@@ -753,14 +758,16 @@ display:none;
   padding: 0px 20px;
 
 }
-.content-btn-more-services{
+
+.content-btn-more-services {
   position: relative;
   justify-content: flex-end;
   display: flex;
   align-items: flex-end;
 
 }
-.btn-more-services{
+
+.btn-more-services {
   text-align: right;
   justify-content: right;
 }
@@ -773,9 +780,10 @@ display:none;
   color: #222;
   font-weight: bold;
   font-size: 1.5em;
-    transform: translateY(10px);
+  transform: translateY(10px);
   transition: all 0.4s ease;
 }
+
 .lemma-services.activo {
   opacity: 1;
   transform: translateY(0);
@@ -785,11 +793,11 @@ display:none;
 
 
 
-.lema-color1{
+.lema-color1 {
   color: #fff;
 }
 
-.lema-color2{
+.lema-color2 {
   color: #222;
 }
 
@@ -1028,7 +1036,7 @@ display:none;
 
 @media (max-width: 968px) {
 
-  
+
 
   .section-hero {
     grid-template-columns: 1fr;
@@ -1388,4 +1396,4 @@ display:none;
     display: block;
     position: relative
   }
-   }
+}
