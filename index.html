@@ -595,14 +595,15 @@
         ];
 
         const lemasServicios = [
-            "Registra o<br> encuentra todo en servicios medicos",
-            "Tus servicios independientes tambien valen",
-            "Ofrece tus servicios tecnicos, dale color a una casa mas",
+           "Registra o<br> encuentra todo en servicios médicos",
+            "Creado para tus servicios independientes",
+            "Ofrece tus servicios técnicos, dale color a una casa más",
             "Todo en el mundo automotriz",
-            "Hecho para cualquier servicio tecnologico",
-            "Ofrece tus servicios destinado a mascotas",
-            "Abre tu portafolio a mas clientes",
+            "Hecho para cualquier servicio tecnológico",
+            "Ofrece tus servicios destinados a mascotas",
+            "Abre tu portafolio a más clientes",
             "En munpros puedes ofrecer tus servicios profesionales. solo registra, crea y publica para nuevos y actuales clientes",
+
         ];
 
         const color = [
@@ -644,8 +645,17 @@
 
                 // cambiar contenido
                 lemmaServices.innerHTML = lemasServicios[indexServicios];
-                sectionService.style.backgroundImage = `url(${imagenesServicios[indexServicios]})`;
+           setTimeout(() => {
+  sectionService.classList.remove("bg-animate");
+}, 800);
 
+// FORZAR reflow (línea mágica ✨)
+void sectionService.offsetWidth;
+
+sectionService.style.backgroundImage =
+  `url(${imagenesServicios[indexServicios]})`;
+
+sectionService.classList.add("bg-animate");
                 // aplicar color correcto
                 lemmaServices.classList.add(color[indexServicios]);
                 serviceMobileTitle.classList.add(color[indexServicios]);
