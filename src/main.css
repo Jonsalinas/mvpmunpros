@@ -779,7 +779,7 @@ h1 {
   font-family: 'Courier New', Courier, monospace;
   color: #222;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2em;
   transform: translateY(10px);
   transition: all 0.4s ease;
 }
@@ -801,10 +801,14 @@ h1 {
   color: #222;
 }
 
+.section-base-main-mobile {
+  transition: transform 0.8s ease;
+  transform: scale(1);
+}
 
-
-
-
+.section-base-main-mobile.bg-animate {
+  transform: scale(1.08);
+}
 
 
 
