@@ -180,8 +180,8 @@
 
         <section class="bg-base section-base-main ">
             <div class="box  pt40 pb40 plr20">
-                <h2 class="subtitle-section mb20 color-white">Luzca sus Productos</h2>
-                <p class="context-section color-white">Publique sus productos, añadiendo imágenes geniales que lo
+                <h2 class="subtitle-section mb20 color-black">Luzca sus Productos</h2>
+                <p class="context-section color-black">Publique sus productos, añadiendo imágenes geniales que lo
                     describan con solo ver.</p>
             </div>
             <div class="section-base">
@@ -205,7 +205,7 @@
                 </div>
 
             </div>
-            <p class="lemma-product" id="lemmaProducto">El tiempo es ahora</p>
+            <p class="lemma-product" id="lemmaProducto">Registra y vende todo tipo de accesorios en un solo lugar</p>
             <div class="content-btn-more-products">
                 <button class="btn-more-products" id="btnNext"></button>
             </div>
@@ -251,8 +251,8 @@
             </div>
 
         </section>
-        <section style="background-color: #FCF8F8;">
-            <div class="section-masonry ">
+        <section class="bg-masonry">
+            <div class="section-masonry">
                 <div class="gallery-section">
                     <button id="reloadGallery">Reorganizar</button>
                     <div class="gallery"></div>
@@ -546,16 +546,22 @@
         });
 
 
-        const imagenes = ["./src/img/reloj_mobil.png", "./src/img/tenis_mobil.png", "./src/img/laptop_mobil.png"];
+        const imagenes = ["./src/img/reloj_mobil.png", "./src/img/ropa_mobil.png", "./src/img/tenis_mobil.png", "./src/img/laptop_mobil.png", "./src/img/food_mobil.png", "./src/img/casco_mobil.png"];
         const titulos = [
             "Accesorios",
+            "Vestir",
             "Calzado",
-            "Tecnologia"
+            "Tecnologia",
+            "Alimentos",
+            "Construcción y Ferretería"
         ];
         const lemas = [
-            "El tiempo es ahora",
-            "Cuida tus pasos",
-            "Potencia tu mundo"
+            "Registra y vende todo tipo de accesorios en un solo lugar.",
+            "Puedes publicar ropa, ropa de bebés, ropa de niños, ropa de adultos y ropa de moda.",
+            "Registra zapatos, tenis y sandalias. Lleva el control de tus productos sin complicaciones",
+            "Publica dispositivos, accesorios tecnológicos y mantén tus productos actualizados",
+            "Registra productos alimenticios y gestiona tus ventas desde un solo lugar",
+            "Publica herramientas, materiales y productos de ferretería en tu tienda",
         ];
         let index = 0;
         const reloj = document.getElementById("reloj");
@@ -589,13 +595,13 @@
             "./src/img/fondo14.jpg",
             "./src/img/fondo16.jpg",
             "./src/img/fondo17.jpg",
-            
+
             "./src/img/fondo20.jpg",
             "./src/img/fondo19.svg",
         ];
 
         const lemasServicios = [
-           "Registra o<br> encuentra todo en servicios médicos",
+            "Registra o<br> encuentra todo en servicios médicos",
             "Creado para tus servicios independientes",
             "Ofrece tus servicios técnicos, dale color a una casa más",
             "Todo en el mundo automotriz",
@@ -645,17 +651,17 @@
 
                 // cambiar contenido
                 lemmaServices.innerHTML = lemasServicios[indexServicios];
-           setTimeout(() => {
-  sectionService.classList.remove("bg-animate");
-}, 800);
+                setTimeout(() => {
+                    sectionService.classList.remove("bg-animate");
+                }, 300);
 
-// FORZAR reflow (línea mágica ✨)
-void sectionService.offsetWidth;
+                // FORZAR reflow (línea mágica ✨)
+                void sectionService.offsetWidth;
 
-sectionService.style.backgroundImage =
-  `url(${imagenesServicios[indexServicios]})`;
+                sectionService.style.backgroundImage =
+                    `url(${imagenesServicios[indexServicios]})`;
 
-sectionService.classList.add("bg-animate");
+                sectionService.classList.add("bg-animate");
                 // aplicar color correcto
                 lemmaServices.classList.add(color[indexServicios]);
                 serviceMobileTitle.classList.add(color[indexServicios]);
